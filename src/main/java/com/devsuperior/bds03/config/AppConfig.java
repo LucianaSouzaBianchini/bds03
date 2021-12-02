@@ -9,7 +9,11 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
 @Configuration
 public class AppConfig {
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 	@Value("${jwt.secret}")
 	private String jwtSecret;
 	
@@ -29,4 +33,8 @@ public class AppConfig {
 	public JwtTokenStore tokenStore() {
 		return new JwtTokenStore(accessTokenConverter());
 	}	
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1

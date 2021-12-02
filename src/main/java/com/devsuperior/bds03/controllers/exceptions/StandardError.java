@@ -3,8 +3,12 @@ package com.devsuperior.bds03.controllers.exceptions;
 import java.io.Serializable;
 import java.time.Instant;
 
+<<<<<<< HEAD
 public class StandardError implements Serializable{
 
+=======
+public class StandardError implements Serializable {
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 	private static final long serialVersionUID = 1L;
 
 	private Instant timestamp;
@@ -12,7 +16,11 @@ public class StandardError implements Serializable{
 	private String error;
 	private String message;
 	private String path;
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 	public StandardError() {
 	}
 
@@ -55,5 +63,8 @@ public class StandardError implements Serializable{
 	public void setPath(String path) {
 		this.path = path;
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 }

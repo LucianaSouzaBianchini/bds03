@@ -19,12 +19,20 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
 	@Value("${security.oauth2.client.client-id}")
 	private String clientId;
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 	@Value("${security.oauth2.client.client-secret}")
 	private String clientSecret;
 	
 	@Value("${jwt.duration}")
+<<<<<<< HEAD
 	private Integer jwtDuration;	
+=======
+	private Integer jwtDuration;
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 	
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
@@ -37,10 +45,14 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	
 	@Autowired
 	private AuthenticationManager authenticationManager;
+<<<<<<< HEAD
 	
 //	@Autowired
 //	private JwtTokenEnhancer tokenEnhancer;  
 	
+=======
+
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
 		security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()");
@@ -49,8 +61,13 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		clients.inMemory()
+<<<<<<< HEAD
 		.withClient(clientId)		
 		.secret(passwordEncoder.encode(clientSecret))		
+=======
+		.withClient(clientId)
+		.secret(passwordEncoder.encode(clientSecret))
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 		.scopes("read", "write")
 		.authorizedGrantTypes("password")
 		.accessTokenValiditySeconds(jwtDuration);
@@ -59,6 +76,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 		
+<<<<<<< HEAD
 //		TokenEnhancerChain chain = new TokenEnhancerChain();
 //		chain.setTokenEnhancers(Arrays.asList(accessTokenConverter, tokenEnhancer));
 				
@@ -68,4 +86,10 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 //		.tokenEnhancer(chain);
 	}
 
+=======
+		endpoints.authenticationManager(authenticationManager)
+		.tokenStore(tokenStore)
+		.accessTokenConverter(accessTokenConverter);
+	}
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 }

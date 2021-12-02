@@ -23,12 +23,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+<<<<<<< HEAD
 		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);		
+=======
+		auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 	}
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
+<<<<<<< HEAD
 		web.ignoring().antMatchers("/actuator/**");		
+=======
+		web.ignoring().antMatchers("/actuator/**");
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 	}
 
 	@Override

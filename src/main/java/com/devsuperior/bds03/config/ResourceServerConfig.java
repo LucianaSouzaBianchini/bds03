@@ -14,7 +14,11 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
 @Configuration
 @EnableResourceServer
+<<<<<<< HEAD
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
+=======
+public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 
 	@Autowired
 	private Environment env;
@@ -22,11 +26,17 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
 	@Autowired
 	private JwtTokenStore tokenStore;
 	
+<<<<<<< HEAD
 	private static final String[] PUBLIC = {"/oauth/token", "/h2-console/**"};
 	
 	private static final String[] OPERATOR_GET = {"/departments/**" , "/employees/**"};
 
 	private static final String[] ADMIN = {"/users/**"};
+=======
+	private static final String[] PUBLIC = { "/oauth/token", "/h2-console/**" };
+	
+	private static final String[] OPERATOR_GET = { "/departments/**", "/employees/**" };
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 	
 	@Override
 	public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
@@ -35,7 +45,11 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
 
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 		// H2
 		if (Arrays.asList(env.getActiveProfiles()).contains("test")) {
 			http.headers().frameOptions().disable();
@@ -44,7 +58,12 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
 		http.authorizeRequests()
 		.antMatchers(PUBLIC).permitAll()
 		.antMatchers(HttpMethod.GET, OPERATOR_GET).hasAnyRole("OPERATOR", "ADMIN")
+<<<<<<< HEAD
 		.anyRequest().hasRole("ADMIN");
 	}
 
+=======
+		.anyRequest().hasAnyRole("ADMIN");
+	}	
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 }

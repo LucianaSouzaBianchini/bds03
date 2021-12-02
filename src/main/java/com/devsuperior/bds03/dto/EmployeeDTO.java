@@ -13,6 +13,7 @@ public class EmployeeDTO implements Serializable {
 	
 	private Long id;
 	
+<<<<<<< HEAD
 	@NotBlank(message="Campo requerido")
 	private String name;
 	
@@ -20,6 +21,15 @@ public class EmployeeDTO implements Serializable {
 	private String email;
 	
 	@NotNull(message="Campo requerido")
+=======
+	@NotBlank(message = "Campo requerido")
+	private String name;
+	
+	@Email(message = "Email inválido")
+	private String email;
+	
+	@NotNull(message = "Campo requerido")
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 	private Long departmentId;
 	
 	public EmployeeDTO() {

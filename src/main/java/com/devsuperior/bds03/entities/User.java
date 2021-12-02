@@ -3,7 +3,10 @@ package com.devsuperior.bds03.entities;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.HashSet;
+<<<<<<< HEAD
 import java.util.Objects;
+=======
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -25,13 +28,17 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Entity
 @Table(name = "tb_user")
 public class User implements UserDetails, Serializable {
+<<<<<<< HEAD
 
+=======
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+<<<<<<< HEAD
 	@Column(unique=true)
 	private String email;
 	private String password;
@@ -42,6 +49,18 @@ public class User implements UserDetails, Serializable {
 	          , inverseJoinColumns = @JoinColumn(name = "role_id") )
 	Set<Role> roles = new HashSet<>();
 
+=======
+	@Column(unique = true)
+	private String email;
+	private String password;
+	
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "tb_user_role",
+		joinColumns = @JoinColumn(name = "user_id"),
+		inverseJoinColumns = @JoinColumn(name = "role_id"))	
+	private Set<Role> roles = new HashSet<>();
+	
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 	public User() {
 	}
 
@@ -75,14 +94,25 @@ public class User implements UserDetails, Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 	public Set<Role> getRoles() {
 		return roles;
 	}
 
 	@Override
 	public int hashCode() {
+<<<<<<< HEAD
 		return Objects.hash(id);
+=======
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		return result;
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 	}
 
 	@Override
@@ -94,7 +124,16 @@ public class User implements UserDetails, Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
+<<<<<<< HEAD
 		return Objects.equals(id, other.id);
+=======
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
 	}
 
 	@Override
@@ -127,5 +166,9 @@ public class User implements UserDetails, Serializable {
 	public boolean isEnabled() {
 		return true;
 	}
+<<<<<<< HEAD
 
 }
+=======
+}
+>>>>>>> e86b783781f59ad361e28764d7ea73cc3d8a2ed1
